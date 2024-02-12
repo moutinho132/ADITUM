@@ -17,13 +17,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNzAzOTU3OTM2LCJzdWIiOiJmZXJuYW5kbyIsImlzcyI6Im1hcnR6YS10ZWNoIiwiZW1haWwiOiJtb3V0aW5obzEzMkBnbWFpbC5jb20iLCJleHAiOjE3MDM5NjE1MzZ9.uxdTbVRDXeDpQlK9ENDUlne_xBzut-szaCIzR-m59rI",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNzA3NzY4NDI0LCJzdWIiOiJmZXJuYW5kbyIsImlzcyI6InRva2VuIiwiZW1haWwiOiJtb3V0aW5obzEzMkBnbWFpbC5jb20iLCJleHAiOjE3MDc3NzIwMjR9.2k42NKWoCwqrDuuC-_ZuXncyAx2_hrsD92P53Ccqeyc",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"person\": {\n        \"name\": \"John\",\n        \"surname\": \"Perez\",\n        \"dni\":\"v-19614680\",\n        \"dateOfBirth\": \"2000-08-02\"\n    },\n    \"reference\": \"My Friend Name\"\n}",
+							"raw": "{\n  \"person\": {\n    \"name\": \"fsfsfs\",\n    \"surname\": \"fsfsf\",\n    \"dni\": \"54646\",\n    \"dateOfBirth\": \"2024-02-12\"\n  },\n  \"reference\": \"dadada\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -81,7 +81,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{token}}",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNzA3NzY4NDI0LCJzdWIiOiJmZXJuYW5kbyIsImlzcyI6InRva2VuIiwiZW1haWwiOiJtb3V0aW5obzEzMkBnbWFpbC5jb20iLCJleHAiOjE3MDc3NzIwMjR9.2k42NKWoCwqrDuuC-_ZuXncyAx2_hrsD92P53Ccqeyc",
 								"type": "text"
 							}
 						],
@@ -115,7 +115,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{token}}",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNzA3NzY4NDI0LCJzdWIiOiJmZXJuYW5kbyIsImlzcyI6InRva2VuIiwiZW1haWwiOiJtb3V0aW5obzEzMkBnbWFpbC5jb20iLCJleHAiOjE3MDc3NzIwMjR9.2k42NKWoCwqrDuuC-_ZuXncyAx2_hrsD92P53Ccqeyc",
 								"type": "text"
 							}
 						],
@@ -269,7 +269,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\":\"fernando\",\n    \"surname\":\"javier\",\n    \"email\":\"moutinho132@gmail.com\",\n    \"fullname\":\"fernando moutinho\",\n    \"password\":\"123456\"\n}",
+					"raw": "{\n    \"name\":\"fernando\",\n    \"surname\":\"javier\",\n    \"email\":\"moutinho1322@gmail.com\",\n    \"password\":\"123456\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
