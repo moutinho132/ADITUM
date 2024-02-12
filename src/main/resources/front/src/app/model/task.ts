@@ -1,9 +1,30 @@
+
 export class Task {
     id: string;
     description: string = '';
-    state: string = '';
+    state: string ="";
+    customer: {
+        id: number;
+        person: {
+            id: number;
+            name: string;
+            surname: string;
+            dateOfBirth: string;
+        };
+        creationTime: string;
+    };
 
     constructor() {
-        this.id = ""; // Opcional: Puedes mantener la inicialización si lo prefieres, pero json-server sobrescribirá este valor.
+        this.id = "";
+        this.customer = {
+            id: 0,
+            person: {
+                id: 0,
+                name: "",
+                surname: "",
+                dateOfBirth: ""
+            },
+            creationTime: ""
+        };
     }
 }

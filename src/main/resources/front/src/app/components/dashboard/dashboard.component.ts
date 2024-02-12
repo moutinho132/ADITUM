@@ -14,6 +14,10 @@ export class DashboardComponent implements OnInit{
     addTaskValue: string = "";
     updateTaskValue : string= '';
     filteredTasks: Task[] = [];
+    currentPage: number = 1;
+    pageSize: number = 9;
+    pagedTaskArr: Task[] | undefined;
+
 
 
     constructor( private _taskService: TaskService){}
@@ -25,18 +29,22 @@ export class DashboardComponent implements OnInit{
     this.taskArr = [];
     this.getAllTask();
     this.filteredTasks = [];
+    
   }
 
 
   
   getAllTask(){
-    this._taskService.getAllTask().subscribe((resp) => {  
+    this._taskService.getAllTask().subscribe((resp: Task[]) => {  
       this.taskArr = resp;
+      this.currentPage = 1;
+      this.updatePagedTasks();
     },
     error => {
       alert(error)
     })
   }
+  
   
   updateTask(){
     this.taskObj.description = this.updateTaskValue;
@@ -60,5 +68,29 @@ export class DashboardComponent implements OnInit{
       this.updateTaskValue = task.description;
     }
 
+   
+    updatePagedTasks() {
+      const startIndex = (this.currentPage - 1) * this.pageSize;
+      const endIndex = Math.min(startIndex + this.pageSize, this.taskArr.length);
+      this.pagedTaskArr = this.taskArr.slice(startIndex, endIndex);
+    }
+  
+    nextPage() {
+      if (this.currentPage < this.totalPages) {
+        this.currentPage++;
+        this.updatePagedTasks();
+      }
+    }
+  
+    prevPage() {
+      if (this.currentPage > 1) {
+        this.currentPage--;
+        this.updatePagedTasks();
+      }
+    }
+  
+    get totalPages(): number {
+      return Math.ceil(this.taskArr.length / this.pageSize);
+    }
 
   }

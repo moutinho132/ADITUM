@@ -16,5 +16,13 @@
                 </button>
             </div>
         </div>
+        <div class="col-4">
+            <label class="txt">Asignada a:</label>
+            <select class="form-control" #customerSelect>
+                <option >Seleccione</option>
+                <option *ngFor="let customer of customers" [value]="customer.id">{{ customer.person.name }} {{ customer.person.surname }}</option>
+            </select> 
+        
+        </div>        
     </form>
 </div>

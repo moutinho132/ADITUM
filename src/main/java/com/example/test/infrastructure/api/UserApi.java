@@ -14,7 +14,7 @@ import java.util.List;
 public interface UserApi {
     @PostMapping(path = "/login", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @CrossOrigin(origins = "http://localhost:4200/", allowedHeaders = "*")
     UserNewResponse UserLogin(@RequestBody UserLoginRequest request);
 
 
@@ -22,7 +22,6 @@ public interface UserApi {
             produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-
     UserResponse saveUser(@RequestBody UserRequest request);
 
 

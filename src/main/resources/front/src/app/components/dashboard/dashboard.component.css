@@ -15,3 +15,15 @@
     border-color: #C8FA5F;
     color: black; 
 }
+
+.table-container {
+    position: relative;
+  }
+  
+  .pagination-container {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  

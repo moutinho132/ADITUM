@@ -28,15 +28,9 @@ public class TaskController implements TaskApi {
     }
 
     @Override
-    public PaginatedResponse<TaskReponse> findAll(Integer page,
-                                                  Integer size, String direction, String attribute, String token) {
+    public List<TaskReponse> findAll(Integer page,Integer size, String direction, String attribute, String token) {
         final List<Task> response = managementService.findAll(page, size, direction, attribute);
-        return PaginatedResponse.<TaskReponse>builder()
-                .total(response.size())
-                .page(page)
-                .size(response.size())
-                .items(mapper.modelToResponseList(response))
-                .build();
+        return mapper.modelToResponseList(response);
     }
 
     @Override

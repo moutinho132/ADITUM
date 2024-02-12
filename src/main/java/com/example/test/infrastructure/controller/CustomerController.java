@@ -27,7 +27,7 @@ public class CustomerController implements CustomerApi {
         return mapper.modelToResponse(managementService.saveCustomer(mapper.requestToModel(request),token));
     }
 
-    @Override
+   /* @Override
     public PaginatedResponse<CustomerResponse> findAll(final Integer page, final Integer size, final String direction, final String attribute) {
         final List<Customer> response = managementService.findAll(page, size, direction, attribute);
         return PaginatedResponse.<CustomerResponse>builder()
@@ -36,5 +36,12 @@ public class CustomerController implements CustomerApi {
                 .size(response.size())
                 .items(mapper.modelsToResponseList(response))
                 .build();
+    }*/
+
+
+    @Override
+    public List<CustomerResponse> findAll(final Integer page, final Integer size, final String direction, final String attribute) {
+        final List<Customer> response = managementService.findAll(page, size, direction, attribute);
+        return mapper.modelsToResponseList(response);
     }
 }
