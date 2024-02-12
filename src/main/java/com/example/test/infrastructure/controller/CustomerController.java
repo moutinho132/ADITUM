@@ -2,6 +2,7 @@ package com.example.test.infrastructure.controller;
 
 import com.example.test.application.CustomerManagementService;
 import com.example.test.domain.models.Customer;
+import com.example.test.domain.models.Person;
 import com.example.test.domain.service.CustomerService;
 import com.example.test.infrastructure.api.CustomerApi;
 import com.example.test.infrastructure.mapper.CustomerApiMapper;

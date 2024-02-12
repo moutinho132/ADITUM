@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CustomerService } from './customer.service';
 import { Customer } from 'src/app/model/customer';
 import { ToastrService } from 'ngx-toastr';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer',
@@ -11,13 +12,14 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./customer.component.css'],
 })
 export class CustomerComponent implements OnInit {
+  [x: string]: any;
   customerForm!: FormGroup;
   customer: Customer = new Customer();
 
   constructor(
     private fb: FormBuilder,
     private customerService: CustomerService,
-    private toastr: ToastrService,
+    private toastr: ToastrService,public router: Router,
   ) {}
 
   ngOnInit(): void {
@@ -48,10 +50,12 @@ export class CustomerComponent implements OnInit {
         reference: formData.reference
       };
 
+
       this.customerService.addCustomer(this.customer).subscribe(
         (response) => {
           console.log('Cliente agregado exitosamente:', response);
           this.toastr.success('Cliente agregado exitosamente');
+          this.router.navigate(['task']);
           this.customerForm.reset();
         },
         (error) => {

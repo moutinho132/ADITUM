@@ -22,8 +22,7 @@ export class CustomerService {
 
   addCustomer(customer: Customer): Observable<Customer> {
     const token = localStorage.getItem('token');
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-
+    const headers = new HttpHeaders().set('Authorization', `${token}`);
     return this.http.post<Customer>(this.serviceURL, customer, { headers });
   }
 

@@ -15,7 +15,6 @@ public class PersonRequest implements Serializable {
     @Serial
     private static final long serialVersionUID = -4276196622211080058L;
 
-    private Integer id;
 
     @NotEmpty(message = "Name empty")
     private String name;
