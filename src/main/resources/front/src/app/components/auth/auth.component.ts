@@ -15,14 +15,13 @@ export class AuthComponent {
     password: ''
   };
 
-  constructor(private authService: AuthService, private toastr: ToastrService, 
+  constructor(private authService: AuthService, private toastr: ToastrService,
     public router: Router
     ) {}
 
   onSubmit() {
     this.authService.login(this.loginData)
       .subscribe(response => {
-        console.log('Login successful:', response);
         this.toastr.success('Inicio de sesión exitoso');
         localStorage.setItem('id', response.id.toString());
         localStorage.setItem('name', response.name);

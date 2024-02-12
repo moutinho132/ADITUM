@@ -42,7 +42,6 @@ export class TaskComponent implements OnInit{
 
   onCustomerSelect(customerId: any ) {
     this.selectedCustomerId = customerId;
-    console.log('Selected customer ID:', this.selectedCustomerId);
 }
 
 

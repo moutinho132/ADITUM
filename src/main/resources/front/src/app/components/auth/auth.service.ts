@@ -14,8 +14,6 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
    login(loginData: ILogin): Observable<any> {
-     console.log(loginData)
-     console.log('URL:',this.serviceURL)
      return this.http.post(this.serviceURL, loginData);
    }
 

@@ -23,7 +23,6 @@ export class TaskService {
 
   newTask(task: Task): Observable<any>{
     const token = localStorage.getItem('token');
-    console.log('Value token:',token);
     const headers = new HttpHeaders().set('Authorization', `${token}`);
     return this.http.post(this.serviceURL, task, {headers})
   }

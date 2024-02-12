@@ -23,7 +23,6 @@ export class UserComponent {
   onSubmit() {
     this.userService.createUser(this.userData)
       .subscribe(response => {
-        console.log('User created successfully:', response);
         this.toastr.success('Usuario agregado exitosamente');
         this.userData = {
           name: '',

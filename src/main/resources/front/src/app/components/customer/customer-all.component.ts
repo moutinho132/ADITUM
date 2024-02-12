@@ -14,14 +14,13 @@ export class CustomerAllComponent implements OnInit {
   constructor(private customerService: CustomerService) {
     this.customers = this.customerService.getAllCustomers();
   }
-  
-  
+
+
   ngOnInit(): void {
     this.loadCustomers();
   }
-  
+
   loadCustomers(): void {
     this.customers = this.customerService.getAllCustomers();
-    console.log('Clientes:', this.customers);
   }
 }

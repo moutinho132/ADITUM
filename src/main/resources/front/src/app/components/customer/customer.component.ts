@@ -53,7 +53,6 @@ export class CustomerComponent implements OnInit {
 
       this.customerService.addCustomer(this.customer).subscribe(
         (response) => {
-          console.log('Cliente agregado exitosamente:', response);
           this.toastr.success('Cliente agregado exitosamente');
           this.router.navigate(['task']);
           this.customerForm.reset();
