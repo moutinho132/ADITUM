@@ -44,8 +44,8 @@ public class TaskController implements TaskApi {
     }
 
     @Override
-    public void deleteById(Integer id, String token) {
-        managementService.deleteById(id, token);
+    public void deleteById(Integer id) {
+        managementService.deleteById(id);
     }
 
     @Override

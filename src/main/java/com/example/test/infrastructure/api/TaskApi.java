@@ -51,9 +51,9 @@ public interface TaskApi {
     @DeleteMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    void deleteById(@PathVariable("id") Integer id,@RequestHeader(value="Authorization") String token);
+    void deleteById(@PathVariable("id") Integer id);
 
-    @GetMapping(value = "/{id}/completed")
+    @PutMapping(value = "/{id}")
     @ResponseBody
     @ResponseStatus(HttpStatus.ACCEPTED)
     @CrossOrigin(origins = "*", allowedHeaders = "*")

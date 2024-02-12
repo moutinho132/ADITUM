@@ -20,6 +20,7 @@ public class PersonResponse implements Serializable {
   private static final long serialVersionUID = 4013604383803994035L;
 
   private final Integer id;
+  private final String dni;
   private final String name;
   private final String surname;
   private final LocalDate dateOfBirth;

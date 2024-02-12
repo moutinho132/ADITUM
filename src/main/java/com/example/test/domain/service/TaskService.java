@@ -39,9 +39,8 @@ public class TaskService {
                 .orElseThrow(() -> new TaskNotFoundException(id)));
     }
 
-    public void deleteById(final Integer id, final String token) {
+    public void deleteById(final Integer id) {
         existsById(id);
-
         repository.deleteById(id);
     }
 

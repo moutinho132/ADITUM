@@ -49,8 +49,8 @@ public class TaskManagementService {
     public Task findById(final Integer id,final String token) {
         return service.findById(id,token);
     }
-    public void deleteById(final Integer id,final String token) {
-         service.deleteById(id,token);
+    public void deleteById(final Integer id) {
+         service.deleteById(id);
     }
 
     public List<Task> findByCustomer(final Integer id,final String token) {
@@ -74,7 +74,7 @@ public class TaskManagementService {
                        .customer(task.getCustomer())
                        .description(task.getDescription())
                        .name(task.getName())
-                       .status(TaskStatusEnum.COMPLETED)
+                       .state(TaskStatusEnum.COMPLETED)
                .build());
     }
 
@@ -101,8 +101,8 @@ public class TaskManagementService {
     }
 
     private Task buildStatus(final Task model) {
-        if (Objects.isNull(model.getStatus())) {
-            return model.withStatus(TaskStatusEnum.ACCEPTED);
+        if (Objects.isNull(model.getState())) {
+            return model.withState(TaskStatusEnum.ACCEPTED);
         }
         return model;
     }
