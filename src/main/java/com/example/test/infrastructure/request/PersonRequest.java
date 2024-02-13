@@ -16,9 +16,7 @@ public class PersonRequest implements Serializable {
 
 
     private String name;
-
     private String surname;
-
     private String dni;
     private LocalDate dateOfBirth;
 }

@@ -45,16 +45,9 @@ export class TaskService {
     console.log(`${this.serviceURL}/${+task.id}`)
     const token = localStorage.getItem('token');
     console.log('Tarea actualizada:', this.taskObj);
-   // state: this.selectedState,
     const headers = new HttpHeaders().set('Authorization', `${token}`);
 
     return this.http.put(`${this.serviceURL}/update`, task,  {headers})
   }
- 
+
 }
-/*   updateTask(task: Task): Observable<any>{
-    console.log(`${this.serviceURL}/update`)
-    const token = localStorage.getItem('token');
-    const headers = new HttpHeaders().set('Authorization', `${token}`);
-    return this.http.put(`${this.serviceURL}/update`, task, {headers})
-  } */

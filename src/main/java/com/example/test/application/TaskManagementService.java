@@ -102,13 +102,6 @@ public class TaskManagementService {
         return model;
     }
 
-   /* private Task buildStatus(final Task model) {
-        if (Objects.isNull(model.getState())) {
-            return model.withState(TaskStatusEnum.ACCEPTED);
-        }
-        return model;
-    }*/
-
     private Task buildCustomer(final Task model,final String token) {
         if (Objects.nonNull(model.getCustomer())) {
            Customer customer = customerService.findById(model.getCustomer().getId(),token);

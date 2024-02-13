@@ -16,17 +16,6 @@ public interface TaskApi {
     @CrossOrigin(origins = "http://localhost:4200/", allowedHeaders = "*")
     TaskReponse save(@RequestBody @Valid TaskRequest request, @RequestHeader(value = "Authorization") String token);
 
-    /*@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
-    @ResponseStatus(HttpStatus.OK)
-    @CrossOrigin(origins = "*", allowedHeaders = "*")
-    PaginatedResponse<TaskReponse> findAll(@RequestParam(name = "page", defaultValue = "0") Integer page,
-                                           @RequestParam(name = "size", defaultValue = "10") Integer size,
-                                           @RequestParam(name = "sort-direction", defaultValue = "DESC") String direction,
-                                           @RequestParam(name = "sort-attribute", defaultValue = "id") String attribute,
-                                           @RequestHeader(value = "Authorization") String token
-    );*/
-
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)
@@ -59,5 +48,4 @@ public interface TaskApi {
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     TaskReponse closeById(@RequestBody TaskRequest request,@RequestHeader(value="Authorization") String token);
 
-    //    TaskReponse closeById(@RequestBody TaskRequest request, @RequestHeader(value="Authorization") String token );
 }
