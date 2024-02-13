@@ -37,8 +37,7 @@ public class TaskEntity implements Serializable {
     private CustomerEntity customer;
 
     @Column(name = "status")
-    @Convert(converter = TaskStatusEnumConverter.class)
-    private TaskStatusEnum state;
+    private String state;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "creation_user_id")

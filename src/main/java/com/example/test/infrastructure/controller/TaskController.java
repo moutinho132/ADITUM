@@ -9,6 +9,7 @@ import com.example.test.infrastructure.request.TaskRequest;
 import com.example.test.infrastructure.response.PaginatedResponse;
 import com.example.test.infrastructure.response.TaskReponse;
 import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -49,7 +50,7 @@ public class TaskController implements TaskApi {
     }
 
     @Override
-    public TaskReponse closeById(Integer id,String token) {
-       return mapper.modelToResponse(managementService.updateCompletedTask(id,token));
+    public TaskReponse closeById(TaskRequest request,String token) {
+       return mapper.modelToResponse(managementService.updateCompletedTask( request,token));
     }
 }

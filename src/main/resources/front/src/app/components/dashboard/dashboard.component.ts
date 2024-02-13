@@ -48,6 +48,7 @@ export class DashboardComponent implements OnInit{
   
   updateTask(){
     this.taskObj.description = this.updateTaskValue;
+    this.taskObj.state = this.taskObj.state; 
     this._taskService.updateTask(this.taskObj).subscribe((resp) => { 
       this.ngOnInit();
     }, error =>{

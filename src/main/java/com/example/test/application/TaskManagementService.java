@@ -5,6 +5,7 @@ import com.example.test.domain.models.Customer;
 import com.example.test.domain.models.Task;
 import com.example.test.domain.service.CustomerService;
 import com.example.test.domain.service.TaskService;
+import com.example.test.infrastructure.request.TaskRequest;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,6 +13,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestHeader;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -60,8 +62,9 @@ public class TaskManagementService {
     }
 
     @Transactional
-    public Task updateCompletedTask(final Integer id, final String token) {
+    public Task updateCompletedTask(TaskRequest request, String token) {
         Task taskUpdate = null ;
+        Integer id  = request.getId();
         service.existsById(id);
         final Task task = service.findById(id,token);
        return service.save(Task
@@ -74,7 +77,7 @@ public class TaskManagementService {
                        .customer(task.getCustomer())
                        .description(task.getDescription())
                        .name(task.getName())
-                       .state(TaskStatusEnum.COMPLETED)
+                       .state(request.getState())
                .build());
     }
 
@@ -87,7 +90,6 @@ public class TaskManagementService {
         built.set(buildCreationData(built.get(),token));
         built.set(buildModificationData(built.get(),token));
         built.set(buildCustomer(built.get(),token));
-        built.set(buildStatus(built.get()));
         return built.get();
     }
 
@@ -100,12 +102,12 @@ public class TaskManagementService {
         return model;
     }
 
-    private Task buildStatus(final Task model) {
+   /* private Task buildStatus(final Task model) {
         if (Objects.isNull(model.getState())) {
             return model.withState(TaskStatusEnum.ACCEPTED);
         }
         return model;
-    }
+    }*/
 
     private Task buildCustomer(final Task model,final String token) {
         if (Objects.nonNull(model.getCustomer())) {

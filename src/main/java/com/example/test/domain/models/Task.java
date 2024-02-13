@@ -20,7 +20,8 @@ public class Task {
     @With
     private final String task;
     @With
-    private TaskStatusEnum state;
+    private String state;
+
     @With
     private final Customer customer;
     @With

@@ -11,4 +11,5 @@ public class TaskRequest {
     private String description;
     private String name;
     private Customer customer;
+    private String state;
 }

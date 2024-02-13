@@ -3,17 +3,17 @@ package com.example.test.infrastructure.api;
 import com.example.test.infrastructure.request.TaskRequest;
 import com.example.test.infrastructure.response.PaginatedResponse;
 import com.example.test.infrastructure.response.TaskReponse;
-import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 public interface TaskApi {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @CrossOrigin(origins = "http://localhost:4200/", allowedHeaders = "*")
     TaskReponse save(@RequestBody @Valid TaskRequest request, @RequestHeader(value = "Authorization") String token);
 
     /*@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
@@ -53,10 +53,11 @@ public interface TaskApi {
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     void deleteById(@PathVariable("id") Integer id);
 
-    @PutMapping(value = "/{id}")
+    @PutMapping(path = "/update")
     @ResponseBody
-    @ResponseStatus(HttpStatus.ACCEPTED)
+    @ResponseStatus(HttpStatus.OK)
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    TaskReponse closeById(@PathVariable("id") Integer id,@RequestHeader(value="Authorization") String token);
+    TaskReponse closeById(@RequestBody TaskRequest request,@RequestHeader(value="Authorization") String token);
 
+    //    TaskReponse closeById(@RequestBody TaskRequest request, @RequestHeader(value="Authorization") String token );
 }

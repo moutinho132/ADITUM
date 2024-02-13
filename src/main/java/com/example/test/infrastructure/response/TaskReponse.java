@@ -23,7 +23,7 @@ public class TaskReponse implements Serializable {
     private final String description;
     private final String name;
     private final Customer customer;
-    private TaskStatusEnum state;
+    private String state;
     private final User creationUser;
     private final User modificationUser;
     private final LocalDateTime creationTime;
